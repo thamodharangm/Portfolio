@@ -109,52 +109,32 @@ function saveState() {
 // 3. DEVELOPER PROJECTS DATABASE
 const PROJECTS = [
   {
-    id: 'proj_gloriavinmart',
-    title: 'Gloriavinmart E-Commerce',
-    iconId: 'icon-cart',
-    image: 'images/gloriavinmart.png',
-    desc: 'Developed a responsive e-commerce web platform featuring dynamic item catalogs and search controls. Integrated Firebase configurations for database handlers and Context API for efficient state management.',
-    tags: ['React.js', 'Context API', 'Firebase', 'MERN Stack'],
+    id: 'proj_rentaround_us',
+    title: 'RENTAROUND US : Vehicle Rental Platform',
+    iconId: 'icon-car',
+    image: 'images/rentaround_us.png',
+    desc: 'Contributed to the development of a full-stack vehicle rental platform for the US market across web and mobile applications. Developed responsive React.js web interfaces and React Native mobile screens. Implemented RESTful API integration, authentication workflows, and backend enhancements using Node.js and Express.js.',
+    tags: ['React.js', 'React Native', 'Node.js', 'Express.js', 'MongoDB'],
     demoUrl: 'https://thamodharangm.github.io/Portfolio/',
     repoUrl: 'https://github.com/Thamodharangm'
   },
   {
-    id: 'proj_textmate_ai',
-    title: 'Textmate AI Writing Assistant',
-    iconId: 'icon-pen',
-    image: 'images/textmate_ai.png',
-    desc: 'Engineered an AI-powered writing assistant that processes, refines, and generates high-quality text contents on demand. Integrated with Node.js/Express.js backend services and Groq API pipelines.',
-    tags: ['React.js', 'Node.js', 'Groq API', 'Express.js'],
+    id: 'proj_rmsilks',
+    title: 'RMSILKS : Retail Billing & Inventory',
+    iconId: 'icon-tag',
+    image: 'images/rmsilks.png',
+    desc: 'Developed a retail POS billing and inventory management system for textile business operations. Implemented inventory management, barcode billing, customer management, and sales reporting modules. Integrated REST APIs and optimized inventory workflows for improved efficiency.',
+    tags: ['React.js', 'Node.js', 'Express.js', 'MongoDB'],
     demoUrl: 'https://thamodharangm.github.io/Portfolio/',
     repoUrl: 'https://github.com/Thamodharangm'
   },
   {
-    id: 'proj_sangatamizh',
-    title: 'Sangatamizh Music Platform',
-    iconId: 'icon-music',
-    image: 'images/sangatamizh.png',
-    desc: 'Built a localized Tamil music streaming application focusing on easy track selection. Integrated YouTube APIs to fetch content and stream audios in standard web browsers.',
-    tags: ['React.js', 'YouTube API', 'CSS3'],
-    demoUrl: 'https://thamodharangm.github.io/Portfolio/',
-    repoUrl: 'https://github.com/Thamodharangm'
-  },
-  {
-    id: 'proj_bookstore',
-    title: 'Bookstore CRUD System',
-    iconId: 'icon-book',
-    image: 'images/bookstore.png',
-    desc: 'Constructed a bookstore CRUD records system with integrated databases. Coded back-end controllers inside Spring Boot and mapped responsive UI views with Bootstrap.',
-    tags: ['Spring Boot', 'SQL', 'Bootstrap', 'Java'],
-    demoUrl: 'https://thamodharangm.github.io/Portfolio/',
-    repoUrl: 'https://github.com/Thamodharangm'
-  },
-  {
-    id: 'proj_todolist',
-    title: 'Task management ToDo List',
-    iconId: 'icon-checklist',
-    image: 'images/todolist.png',
-    desc: 'Programmed a tasks dashboard enabling quick add, update, delete, and checkoff configurations. Designed clean user interactions using dynamic JavaScript.',
-    tags: ['JavaScript', 'HTML5', 'CSS3'],
+    id: 'proj_amr_battery',
+    title: 'AMR BATTERY SHOP : POS & Inventory',
+    iconId: 'icon-battery',
+    image: 'images/amr_battery.png',
+    desc: 'Developed a POS billing and inventory management solution for battery retail operations. Built billing, inventory tracking, warranty management, and service reminder modules. Developed REST APIs and integrated MongoDB for secure and reliable data management.',
+    tags: ['React.js', 'Node.js', 'Express.js', 'MongoDB'],
     demoUrl: 'https://thamodharangm.github.io/Portfolio/',
     repoUrl: 'https://github.com/Thamodharangm'
   }
@@ -277,20 +257,12 @@ function renderProjects() {
     }).join('');
 
     col.innerHTML = `
-      <div class="project-card card h-100 w-100">
+      <div class="project-card card h-100 w-100" onclick="openProjectDetails('${proj.id}')">
         <div class="project-img-container">
           <img class="project-image" src="${proj.image}" alt="${proj.title}" loading="lazy">
           <div class="project-icon-badge">
             <svg class="project-badge-svg" viewBox="0 0 24 24"><use href="#${proj.iconId}"></use></svg>
           </div>
-        </div>
-        <div class="project-card-content d-flex flex-column justify-content-between">
-          <div>
-            <h3>${proj.title}</h3>
-            <p>${proj.desc}</p>
-            <div class="tech-tags">${tagsHtml}</div>
-          </div>
-          <button class="btn btn-secondary btn-3d btn-full mt-auto" onclick="openProjectDetails('${proj.id}')">Explore Details</button>
         </div>
       </div>
     `;
@@ -316,7 +288,10 @@ window.openProjectDetails = function(projectId) {
   `;
   
   const tagsContainer = modal.querySelector('#project-modal-tags');
-  tagsContainer.innerHTML = proj.tags.map(t => `<span class="tech-tag">${t}</span>`).join('');
+  tagsContainer.innerHTML = proj.tags.map(t => {
+    const sanitizedTag = t.toLowerCase().replace(/[.\s]/g, '-');
+    return `<span class="tech-tag tag-${sanitizedTag}">${t}</span>`;
+  }).join('');
 
   modal.querySelector('#project-modal-demo').setAttribute('href', proj.demoUrl);
   modal.querySelector('#project-modal-repo').setAttribute('href', proj.repoUrl);
