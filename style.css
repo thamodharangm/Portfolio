@@ -1314,6 +1314,16 @@ body {
   position: relative;
 }
 
+@media (max-width: 576px) {
+  .project-modal-card {
+    padding: 20px 16px;
+    border-radius: 16px;
+  }
+  .project-modal-img-container {
+    height: 160px;
+  }
+}
+
 .project-modal-close {
   position: absolute;
   top: 15px;
