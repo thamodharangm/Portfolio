@@ -8,22 +8,26 @@
   .content-section{padding:32px 60px}
 }
 
-/* Mobile-only: About page locks to one screen (no scroll) with compact focus-area containers */
+/* Mobile: every page locks to one screen — no scrolling on any page.
+   Content sits on top, the sketch fills the remaining space below (same split as the original). */
 @media (max-width:768px){
-  body:has(.content-section.page-about){height:100vh;height:100dvh;overflow:hidden}
-  .main-container:has(.content-section.page-about){height:100vh;height:100dvh;min-height:0}
-  .main-layout:has(.content-section.page-about){grid-template-rows:minmax(0,auto) minmax(0,1fr);height:100%;min-height:0;overflow:hidden}
-  .content-section.page-about{min-height:0;max-height:100%;padding:20px 16px;overflow:hidden auto}
-  .main-layout:has(.content-section.page-about) .rocket-section{min-height:0;height:100%;padding:6px 0 10px;overflow:hidden}
-  .main-layout:has(.content-section.page-about) .rocket-section img{width:auto!important;height:100%!important;max-width:100%;object-fit:contain;margin:0 auto}
+  html,body{height:100vh;height:100dvh;overflow:hidden}
+  .main-container{height:100vh;height:100dvh;min-height:0}
+  .main-layout{grid-template-columns:1fr;grid-template-rows:minmax(0,auto) minmax(0,1fr);height:100%;min-height:0;overflow:hidden}
+  .content-section{min-height:0;max-height:100%;padding:24px 20px;overflow:hidden auto}
+  .rocket-section{min-height:0;height:100%;padding:8px 0 12px;overflow:hidden}
+  .rocket-section img{width:auto!important;height:100%!important;max-width:100%;object-fit:contain;margin:0 auto}
 
-  .page-about .section-title-wrap{margin-bottom:10px!important}
-  .page-about .content-title{font-size:24px}
-  .page-about .about-copy{margin-bottom:10px!important}
-  .page-about .about-copy p{font-size:13px!important;line-height:1.5!important}
-  .page-about .content-subtitle{font-size:15px;margin-bottom:10px!important}
-  .page-about .team-grid{gap:10px!important;max-width:280px!important;margin:0 auto!important;justify-items:center}
-  .page-about .focus-card{padding:10px 16px!important;border-radius:14px!important;gap:3px!important;max-width:280px}
-  .page-about .focus-name{font-size:13px!important}
-  .page-about .focus-desc{font-size:11px!important}
+  /* Compact page content so each page fits a phone screen */
+  .section-title-wrap{margin-bottom:10px!important}
+  .content-title{font-size:28px}
+  .content-subtitle{font-size:15px;margin-bottom:16px}
+  .content-section.page-about{padding:20px 16px}
+  .about-copy{margin-bottom:10px!important}
+  .about-copy p{font-size:13px!important;line-height:1.5!important}
+  .page-about .content-subtitle{margin-bottom:10px!important}
+  .team-grid{gap:10px!important;max-width:280px!important;margin:0 auto!important;justify-items:center}
+  .focus-card{padding:10px 16px!important;border-radius:14px!important;gap:3px!important;max-width:280px}
+  .focus-name{font-size:13px!important}
+  .focus-desc{font-size:11px!important}
 }
