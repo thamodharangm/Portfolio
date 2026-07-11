@@ -83,7 +83,10 @@ const jsonLd = {
         'Full-stack developer specializing in React.js, Next.js, React Native, Node.js, Express.js, and Java. Builds web and mobile applications for clients and personal projects.',
       email: 'thamodharangp@gmail.com',
       telephone: '+916381893190',
-      sameAs: ['https://github.com/thamodharangm'],
+      sameAs: [
+        'https://github.com/thamodharangm',
+        'https://thamodharangm.github.io/Portfolio/'
+      ],
       knowsAbout: [
         'React.js',
         'Next.js',
@@ -109,7 +112,8 @@ const jsonLd = {
       name: 'Thamodharan Portfolio',
       description: 'Portfolio of Thamodharan, a full-stack developer',
       author: { '@id': `${SITE_URL}/#person` },
-      inLanguage: 'en-US'
+      inLanguage: 'en-US',
+      sameAs: 'https://thamodharangm.github.io/Portfolio/'
     },
     {
       '@type': 'ProfilePage',
