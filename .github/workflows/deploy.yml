@@ -37,8 +37,8 @@ jobs:
 
       - name: Build
         run: npm run build
-        env:
-          NEXT_PUBLIC_BASE_PATH: /Portfolio
+        # Custom domain (thamodharan.textmateai.online) serves from the root,
+        # so no NEXT_PUBLIC_BASE_PATH is needed.
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
