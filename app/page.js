@@ -103,8 +103,13 @@ function HomePage() {
         textAlign: 'center'
       }}
     >
-      <h1 className="content-title" style={{ fontSize: '64px', marginBottom: '24px', fontWeight: 400 }}>
-        I Build Websites &amp; Apps. Period.
+      <h1
+        className="content-title"
+        style={{ fontSize: 'clamp(34px, 11.5vw, 64px)', marginBottom: '24px', fontWeight: 400 }}
+      >
+        I Build
+        <br />
+        Websites &amp; Apps
       </h1>
       <p
         className="content-subtitle"
