@@ -17,6 +17,11 @@
   .content-section{min-height:0;max-height:100%;padding:24px 20px;overflow:hidden auto}
   .rocket-section{min-height:0;height:100%;padding:8px 0 12px;overflow:hidden}
   .rocket-section img{width:auto!important;height:100%!important;max-width:100%;object-fit:contain;margin:0 auto}
+  /* About & Contact: drawing fills the remaining space edge-to-edge like the original */
+  .main-layout:has(.page-about) .rocket-section,
+  .main-layout:has(.page-contact) .rocket-section{padding:0}
+  .main-layout:has(.page-about) .rocket-section img,
+  .main-layout:has(.page-contact) .rocket-section img{width:100%!important;object-fit:cover;object-position:center top}
 
   /* Compact page content so each page fits a phone screen */
   .section-title-wrap{margin-bottom:10px!important}
