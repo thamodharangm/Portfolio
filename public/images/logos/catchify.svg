@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <g fill="none" stroke="#111111" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Beamed eighth notes -->
+    <circle cx="29" cy="72" r="7" fill="#111111" stroke="none" />
+    <circle cx="61" cy="66" r="7" fill="#111111" stroke="none" />
+    <path d="M36 72 V32" />
+    <path d="M68 66 V26" />
+    <path d="M36 34 L68 28" stroke-width="9" stroke-linecap="butt" />
+    <!-- Sound wave accent -->
+    <path d="M80 42 c5 5 5 13 0 18" />
+    <path d="M87 36 c8 8 8 22 0 30" opacity="0.55" />
+  </g>
+</svg>
