@@ -3,6 +3,29 @@
 
 .main-layout>*{min-width:0}
 
+/* Short screens: flex centering + overflow clips the top of the content (title becomes
+   unreachable). Start-align the scroll container; each page centers itself via min-height:100%. */
+.content-section{justify-content:flex-start}
+
+/* Demo modal: dvh so the mobile browser URL bar doesn't push it off-screen */
+.demo-modal{max-height:85vh;max-height:85dvh;overflow-y:auto}
+
+/* Desktop: banner always fits its half — no clipping on wide/short displays */
+@media (min-width:769px){
+  .rocket-section img{height:100%!important;max-height:100%;object-fit:contain}
+}
+
+/* Tablet & small laptop: two-column stays, but tighter padding + smaller type
+   so the ~half-width column isn't cramped */
+@media (min-width:769px) and (max-width:1100px){
+  .content-section{padding:48px 32px}
+  .content-title{font-size:36px}
+  .content-subtitle{font-size:16px}
+  .page-home .content-title{font-size:clamp(30px,5.5vw,48px)!important}
+  .navbar{padding:0 24px}
+  .nav-links{gap:24px}
+}
+
 /* Desktop-only: keep everything on one screen on short displays (mobile untouched — original behavior) */
 @media (max-height:800px) and (min-width:769px){
   .content-section{padding:32px 60px}
@@ -35,4 +58,13 @@
   .focus-card{padding:10px 16px!important;border-radius:14px!important;gap:3px!important;max-width:280px}
   .focus-name{font-size:13px!important}
   .focus-desc{font-size:11px!important}
+
+  /* Contact: iOS Safari auto-zooms the page when a focused input is under 16px —
+     keep form fields at 16px on touch so the one-screen layout survives focus */
+  .page-contact input,.page-contact textarea{font-size:16px!important;padding:8px 10px!important}
+  /* Compact the contact page so it fits one screen like the other pages */
+  .content-section.page-contact{padding:20px 16px}
+  .page-contact form{gap:10px!important;max-width:420px!important}
+  .page-contact p{font-size:13px!important;line-height:1.5!important}
+  .page-contact button[type=submit]{padding:8px 20px!important;font-size:13px!important}
 }

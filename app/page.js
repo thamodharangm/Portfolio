@@ -99,7 +99,7 @@ function HomePage() {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '100%',
+        minHeight: '100%',
         textAlign: 'center'
       }}
     >
@@ -229,7 +229,7 @@ function ProjectPage() {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '100%',
+        minHeight: '100%',
         textAlign: 'center'
       }}
     >
@@ -265,14 +265,13 @@ function ProjectPage() {
         >
           <div
             onClick={e => e.stopPropagation()}
+            className="demo-modal"
             style={{
               background: 'var(--bg-secondary)',
               border: '2px solid var(--text-primary)',
               boxShadow: '4px 4px #000c',
               padding: '28px 24px',
               width: 'min(90vw, 440px)',
-              maxHeight: '85vh',
-              overflowY: 'auto',
               textAlign: 'left',
               animation: '0.3s ease-out zoomIn'
             }}
@@ -348,7 +347,7 @@ function AboutPage() {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '100%',
+        minHeight: '100%',
         textAlign: 'center'
       }}
     >
@@ -454,7 +453,7 @@ function ContactPage() {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '100%',
+        minHeight: '100%',
         textAlign: 'center'
       }}
     >
