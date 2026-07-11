@@ -31,7 +31,7 @@ function SectionTitle({ title, titleStyle }) {
         maxWidth: '100%'
       }}
     >
-      <h1
+      <h2
         className="content-title"
         style={{
           margin: 0,
@@ -43,7 +43,7 @@ function SectionTitle({ title, titleStyle }) {
         }}
       >
         {title}
-      </h1>
+      </h2>
       <div
         aria-hidden="true"
         style={{
