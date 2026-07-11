@@ -14,6 +14,8 @@ const NAV_ITEMS = [
 ];
 
 const EMAIL = 'thamodharangp@gmail.com';
+// next/image skips basePath for unoptimized static exports — prefix asset URLs manually.
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 function SectionTitle({ title, titleStyle }) {
   return (
@@ -196,7 +198,7 @@ function DemoCard({ project }) {
     >
       <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
         <Image
-          src={project.logo}
+          src={`${BASE}${project.logo}`}
           alt={`${project.name} logo`}
           width={26}
           height={26}
@@ -712,7 +714,7 @@ export default function Home() {
         <div className="rocket-section">
           <Image
             alt="Banner"
-            src={`/images/banner/${route}.jpg`}
+            src={`${BASE}/images/banner/${route}.jpg`}
             width={0}
             height={0}
             sizes="50vw"
