@@ -36,8 +36,8 @@
 @media (max-width:768px){
   html,body{height:100vh;height:100dvh;overflow:hidden}
   .main-container{height:100vh;height:100dvh;min-height:0}
-  .main-layout{grid-template-columns:1fr;grid-template-rows:minmax(0,auto) minmax(0,1fr);height:100%;min-height:0;overflow:hidden}
-  .content-section{min-height:0;max-height:100%;padding:24px 20px;overflow:hidden auto}
+  .main-layout{grid-template-columns:1fr;grid-template-rows:1fr minmax(180px,35%);height:100%;min-height:0;overflow:hidden}
+  .content-section{min-height:0;padding:24px 20px;overflow:hidden auto}
   .rocket-section{min-height:0;height:100%;padding:8px 0 12px;overflow:hidden}
   .rocket-section img{width:auto!important;height:100%!important;max-width:100%;object-fit:contain;margin:0 auto}
   /* About: drawing fills the remaining space edge-to-edge like the original */

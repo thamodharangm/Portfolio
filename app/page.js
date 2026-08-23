@@ -67,7 +67,7 @@ function StoreButton({ href, label, onClick }) {
       rel="noopener noreferrer"
       className="store-button"
       onClick={onClick ? e => { e.preventDefault(); onClick(); } : undefined}
-      onMouseEnter={() => setHover(true)}
+      onMouseEnter={() => { if (typeof window !== 'undefined' && window.innerWidth > 768) setHover(true); }}
       onMouseLeave={() => setHover(false)}
       style={{
         display: 'inline-flex',
@@ -180,7 +180,7 @@ function DemoCard({ project }) {
       href={project.url}
       target="_blank"
       rel="noopener noreferrer"
-      onMouseEnter={() => setHover(true)}
+      onMouseEnter={() => { if (typeof window !== 'undefined' && window.innerWidth > 768) setHover(true); }}
       onMouseLeave={() => setHover(false)}
       style={{
         display: 'flex',
@@ -532,8 +532,10 @@ function ContactPage() {
             transition: 'all 0.2s'
           }}
           onMouseEnter={e => {
-            e.currentTarget.style.background = 'var(--text-primary)';
-            e.currentTarget.style.color = 'var(--bg-secondary)';
+            if (typeof window !== 'undefined' && window.innerWidth > 768) {
+              e.currentTarget.style.background = 'var(--text-primary)';
+              e.currentTarget.style.color = 'var(--bg-secondary)';
+            }
           }}
           onMouseLeave={e => {
             e.currentTarget.style.background = 'transparent';
@@ -587,6 +589,8 @@ export default function Home() {
   useEffect(() => {
     const chars = ['{', '}', '<', '>', '/', ';', '(', ')', '=', '*'];
     const onMove = e => {
+      if (typeof window !== 'undefined' && window.innerWidth <= 768) return;
+
       setCursorPos({ x: e.clientX, y: e.clientY });
 
       const dx = e.clientX - lastTrailPos.current.x;
