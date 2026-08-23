@@ -1578,7 +1578,7 @@ button:disabled {
 
    .main-layout {
       grid-template-columns: 1fr;
-      grid-template-rows: 1fr 40vh;
+      grid-template-rows: 1fr 50vh;
       min-height: 100vh;
       min-height: 100dvh;
       height: auto;
@@ -1595,7 +1595,7 @@ button:disabled {
 
    .rocket-section {
       min-height: 0;
-      height: 40vh;
+      height: 50vh;
       padding: 0;
       align-items: flex-end;
       overflow: hidden;
