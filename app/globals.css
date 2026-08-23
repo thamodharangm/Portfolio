@@ -1606,7 +1606,9 @@ button:disabled {
       height: 100% !important;
       max-width: 100%;
       object-fit: contain;
-      margin: 0 auto
+      margin: 0 auto;
+      transform: scale(1.35);
+      transform-origin: bottom center;
    }
 
 
