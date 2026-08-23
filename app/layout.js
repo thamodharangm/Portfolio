@@ -257,7 +257,7 @@ export default function RootLayout({ children }) {
             Next.js, React Native, Node.js, Express.js, and Java. Available for freelance projects.
           </p>
           <section>
-            <h2>About Thamodharan</h2>
+            <h2>About</h2>
             <p>
               Thamodharan builds and ships full-stack software quickly, with a focus on clean UX
               and scalable engineering. He designs, builds, and iterates on web and mobile products

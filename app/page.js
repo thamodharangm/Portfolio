@@ -351,7 +351,7 @@ function AboutPage() {
         textAlign: 'center'
       }}
     >
-      <SectionTitle title="About Thamodharan" />
+      <SectionTitle title="About" />
       <div className="about-copy" style={{ marginBottom: '14px', maxWidth: '600px' }}>
         <p style={{ fontSize: '15px', lineHeight: 1.6, fontWeight: 300 }}>
           <strong style={{ fontWeight: 700 }}>Who I Am —</strong> I&rsquo;m Thamodharan. I build and
