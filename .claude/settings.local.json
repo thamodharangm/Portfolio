@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Recurse -Depth 2 -File D:\\\\projects\\\\portfolio -Exclude node_modules | Where-Object { $_.FullName -notmatch 'node_modules|\\\\.next|\\\\.git' } | Select-Object -ExpandProperty FullName)",
+      "PowerShell(npm run *)",
+      "PowerShell(git *)"
+    ]
+  }
+}
