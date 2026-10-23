@@ -37,13 +37,14 @@ jobs:
 
       - name: Build
         run: npm run build
-        # Custom domain (thamodharan.textmateai.online) serves from the root,
-        # so no NEXT_PUBLIC_BASE_PATH is needed.
+        env:
+          NEXT_PUBLIC_BASE_PATH: /Portfolio
 
       - name: Verify Pages export
         run: |
           test -s ./out/index.html
-          test "$(tr -d '\r\n' < ./out/CNAME)" = "thamodharan.textmateai.online"
+          test ! -e ./out/CNAME
+          grep -q '/Portfolio/_next/' ./out/index.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

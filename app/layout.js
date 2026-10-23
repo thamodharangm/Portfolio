@@ -1,6 +1,6 @@
 import './globals.css';
 
-const SITE_URL = 'https://thamodharan.textmateai.online';
+const SITE_URL = 'https://thamodharangm.github.io/Portfolio';
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
@@ -28,17 +28,17 @@ export const metadata = {
   publisher: 'Thamodharan',
   applicationName: 'Thamodharan Portfolio',
   alternates: {
-    canonical: '/'
+    canonical: `${SITE_URL}/`
   },
   openGraph: {
     title: 'Thamodharan — Full-Stack Developer | Web & Mobile Apps',
     description:
       'I build and ship full-stack software — web, mobile, and everything in between. React, Next.js, React Native, Node.js, Java.',
-    url: SITE_URL,
+    url: `${SITE_URL}/`,
     siteName: 'Thamodharan Portfolio',
     images: [
       {
-        url: '/og-image.jpg',
+        url: `${SITE_URL}/og-image.jpg`,
         width: 1200,
         height: 630,
         alt: 'Thamodharan — Full-Stack Developer'
@@ -52,7 +52,7 @@ export const metadata = {
     title: 'Thamodharan — Full-Stack Developer | Web & Mobile Apps',
     description:
       'I build and ship full-stack software — web, mobile, and everything in between.',
-    images: ['/og-image.jpg']
+    images: [`${SITE_URL}/og-image.jpg`]
   },
   verification: {
     google: '9zC34fSpgyMnwF8GUffEfNrquEFpQy9s4Bbg8fO726U'

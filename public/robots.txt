@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Block Next.js internal routes
-Disallow: /_next/
+Disallow: /Portfolio/_next/
 
 # AI / LLM crawlers — allow for GEO (Generative Engine Optimization)
 User-agent: GPTBot
@@ -25,4 +25,4 @@ User-agent: Applebot-Extended
 Allow: /
 
 # Sitemap
-Sitemap: https://thamodharan.textmateai.online/sitemap.xml
+Sitemap: https://thamodharangm.github.io/Portfolio/sitemap.xml
