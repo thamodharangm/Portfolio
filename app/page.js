@@ -1160,7 +1160,7 @@ export default function Home() {
             src={`${BASE}/images/banner/${route}.jpg`}
             width={0}
             height={0}
-            sizes="50vw"
+            sizes="(max-width: 768px) 100vw, 50vw"
             style={{ color: 'transparent', width: '100%', height: 'auto' }}
           />
         </div>

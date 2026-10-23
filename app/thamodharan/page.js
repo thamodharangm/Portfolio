@@ -345,16 +345,16 @@ export default function ThamodharanPage() {
         .thamo-main-frame {
           flex: 1;
           display: grid;
-          grid-template-columns: 1.2fr 0.8fr;
+          grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
           height: calc(100vh - 64px);
           overflow: hidden;
         }
 
         .thamo-left-panel {
-          padding: 40px 60px;
+          padding: 40px clamp(28px, 5vw, 60px);
           display: flex;
           flex-direction: column;
-          justifyContent: center;
+          justify-content: center;
           overflow-y: auto;
         }
 
@@ -391,7 +391,7 @@ export default function ThamodharanPage() {
 
         .thamo-grid {
           display: grid;
-          grid-template-columns: repeat(2, 1fr);
+          grid-template-columns: repeat(2, minmax(0, 1fr));
           gap: 14px;
           max-width: 620px;
           width: 100%;
@@ -400,7 +400,7 @@ export default function ThamodharanPage() {
         .thamo-card {
           display: flex;
           flex-direction: column;
-          justifyContent: space-between;
+          justify-content: space-between;
           padding: 16px 18px;
           border: 1.8px solid #000000;
           background: #ffffff;
@@ -633,9 +633,9 @@ export default function ThamodharanPage() {
           }
 
           .thamo-grid {
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             max-width: 100%;
-            gap: 10px;
+            gap: clamp(10px, 2vw, 14px);
           }
 
           .thamo-card {
@@ -671,6 +671,27 @@ export default function ThamodharanPage() {
             margin-top: 14px;
             font-size: 11px;
             padding: 5px 12px;
+          }
+        }
+
+        @media (min-width: 600px) and (max-width: 900px) {
+          .graphic-container {
+            max-width: 280px;
+          }
+
+          .rocket-illustration {
+            max-height: 220px;
+          }
+        }
+
+        @media (max-width: 560px) {
+          .thamo-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .thamo-left-panel {
+            padding-right: clamp(16px, 5vw, 20px);
+            padding-left: clamp(16px, 5vw, 20px);
           }
         }
       `}</style>

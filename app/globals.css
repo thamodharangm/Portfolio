@@ -463,7 +463,8 @@ button:disabled { cursor: not-allowed !important; }
   .content-subtitle { font-size: 16px; }
   .page-home .content-title { font-size: clamp(30px, 5.5vw, 48px) !important; }
   .navbar           { padding: 0 24px; }
-  .nav-links        { gap: 24px; }
+  .nav-links        { gap: clamp(14px, 2vw, 24px); }
+  .nav-links a      { font-size: clamp(12px, 1.3vw, 14px); }
 }
 
 /* ─── Short desktop ─── */
@@ -491,9 +492,8 @@ button:disabled { cursor: not-allowed !important; }
 
   .main-layout {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 50vh;
-    min-height: 100vh;
-    min-height: 100dvh;
+    grid-template-rows: minmax(360px, auto) clamp(220px, 38svh, 340px);
+    min-height: 0;
     height: auto;
     overflow: visible;
   }
@@ -509,7 +509,7 @@ button:disabled { cursor: not-allowed !important; }
 
   .rocket-section {
     min-height: 0;
-    height: 50vh;
+    height: clamp(220px, 38svh, 340px);
     padding: 0;
     align-items: center;
     justify-content: center;
@@ -539,7 +539,11 @@ button:disabled { cursor: not-allowed !important; }
     font-size: 16px;
   }
 
-  .mobile-menu-toggle { display: block; }
+  .mobile-menu-toggle {
+    display: block;
+    min-width: 44px;
+    min-height: 44px;
+  }
   .nav-links { display: none; }
 
   .mobile-menu-overlay {
@@ -554,9 +558,9 @@ button:disabled { cursor: not-allowed !important; }
     background: var(--bg-secondary);
     border: 2px solid var(--text-primary);
     z-index: 1000;
-    min-width: 280px;
-    max-width: 90vw;
-    padding: 32px 24px;
+    width: min(320px, calc(100vw - 32px));
+    max-width: calc(100vw - 32px);
+    padding: clamp(20px, 6vw, 32px) clamp(18px, 6vw, 24px);
     animation: .3s ease-out slideIn;
     position: fixed;
     top: 50%;
@@ -638,6 +642,10 @@ button:disabled { cursor: not-allowed !important; }
   .faq-item h3 { word-wrap: break-word !important; overflow-wrap: break-word !important; max-width: 100% !important; font-size: 14px !important; line-height: 1.4 !important; }
   .faq-item button { gap: 8px !important; max-width: 100% !important; overflow-x: hidden !important; }
   .faq-answer { word-wrap: break-word !important; overflow-wrap: break-word !important; max-width: 100% !important; font-size: 12px !important; line-height: 1.5 !important; }
+}
+
+@media (max-width: 400px) {
+  .contact-inputs-grid { grid-template-columns: 1fr !important; }
 }
 
 /* ─── Scrollbar ─── */
