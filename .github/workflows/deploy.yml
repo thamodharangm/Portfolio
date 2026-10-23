@@ -40,6 +40,11 @@ jobs:
         # Custom domain (thamodharan.textmateai.online) serves from the root,
         # so no NEXT_PUBLIC_BASE_PATH is needed.
 
+      - name: Verify Pages export
+        run: |
+          test -s ./out/index.html
+          test "$(tr -d '\r\n' < ./out/CNAME)" = "thamodharan.textmateai.online"
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
